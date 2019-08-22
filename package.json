@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "wz": "bin/index.js"
+    "wz": "bin/wz-cli.js"
   },
   "keywords": [
     "init-cli"

@@ -13,5 +13,9 @@
     "init-cli"
   ],
   "author": "wzheng (hb_wangzheng@163.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^3.0.0",
+    "inquirer": "^6.5.1"
+  }
 }

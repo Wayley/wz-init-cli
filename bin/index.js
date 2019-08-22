@@ -18,12 +18,13 @@ argv.forEach(arg => {
   }
 });
 try {
-  let result = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+  let templatePath = path.resolve(__dirname, '../templates');
+  let result = fs.readFileSync(path.join(templatePath, 'index.html'), 'utf8');
   // 根据输入的 替换内容
   let newResult = result.replace(/Document/, argv[0]);
 
   // 写入模板
-  fs.writeFile('test.html', newResult, error => {
+  fs.writeFile('index.html', newResult, error => {
     if (error) throw error;
   });
 } catch (error) {

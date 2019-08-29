@@ -5,7 +5,8 @@ const pkg = require('../package.json');
 
 const {
   createAction,
-  initAction
+  initAction,
+  testAction
 } = require('../lib/action.config')
 const _ = require('../lib/utils')
 
@@ -28,6 +29,15 @@ program
   .option('-a,--all', 'Whether to init all files') //命令的参数
   .action(function (options) {
     initAction()
+  })
+
+program
+  .command('test')
+  .option('-a,--all', '......')
+  .action(options => {
+    testAction().then(data => {
+      console.log(data)
+    })
   })
 // program
 //   .command('list')

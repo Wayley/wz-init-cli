@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
+'use strict';
 const program = require('commander');
 const pkg = require('../package.json');
+
 
 const {
   createAction,
@@ -36,7 +38,7 @@ program
   .option('-a,--all', '......')
   .action(options => {
     testAction().then(data => {
-      console.log(data)
+      console.log(data, '-------')
     })
   })
 // program

@@ -6,7 +6,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-08-28 17:01:29
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-03 17:01:51
+ * @LastEditTime: 2019-09-03 17:23:36
  * @Description:
  */
 'use strict';
@@ -17,8 +17,8 @@ const pkg = require('../package.json');
 const {
   createAction,
   initAction,
+  testAction
 } = require('../lib/action.config')
-const testAction = require('../lib/action.config.test')
 const _ = require('../lib/utils')
 
 program
@@ -28,18 +28,16 @@ program
 program
   .command('create')
   .arguments('<app-name>')
-  .option('-a,--all', 'Whether to init all files')
   .description('create a new app project')
   .action((appName, options) => {
     createAction(appName)
   })
 program
   .command('init')
-  // .arguments('[env]')
   .description('initialize a new app project') //命令的描述
   .option('-a,--all', 'Whether to init all files') //命令的参数
   .action(function (options) {
-    initAction()
+    initAction().then()
   })
 
 program

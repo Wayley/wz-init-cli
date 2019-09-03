@@ -1,5 +1,14 @@
 #!/usr/bin/env node
 
+/*
+ * @Author: wzheng(hb_wangzheng@163.com)
+ * @Github: https://github.com/wayley
+ * @Company: Fih-ACKN
+ * @Date: 2019-08-28 17:01:29
+ * @LastEditors: wzheng(hb_wangzheng@163.com)
+ * @LastEditTime: 2019-09-03 17:01:51
+ * @Description:
+ */
 'use strict';
 const program = require('commander');
 const pkg = require('../package.json');
@@ -8,8 +17,8 @@ const pkg = require('../package.json');
 const {
   createAction,
   initAction,
-  testAction
 } = require('../lib/action.config')
+const testAction = require('../lib/action.config.test')
 const _ = require('../lib/utils')
 
 program
@@ -35,10 +44,10 @@ program
 
 program
   .command('test')
-  .option('-a,--all', '......')
+  .option('-a,--all', 'whether to test all inquirer types')
   .action(options => {
-    testAction().then(data => {
-      console.log(data, '-------')
+    testAction(options.all).then(data => {
+      console.log('TEST', data)
     })
   })
 // program

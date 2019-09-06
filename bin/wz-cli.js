@@ -6,7 +6,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-08-28 17:01:29
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-06 11:23:29
+ * @LastEditTime: 2019-09-06 11:25:28
  * @Description:
  */
 'use strict';
@@ -23,7 +23,6 @@ const _ = require('../lib/utils')
 
 program
   .version(pkg.version)
-  .option('-c, --config <path>', 'set config path. defaults to ./conf.js');
 
 program
   .command('create')

@@ -6,7 +6,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-08-28 17:01:29
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-03 17:23:36
+ * @LastEditTime: 2019-09-06 10:54:19
  * @Description:
  */
 'use strict';
@@ -30,7 +30,7 @@ program
   .arguments('<app-name>')
   .description('create a new app project')
   .action((appName, options) => {
-    createAction(appName)
+    createAction(appName).then(done => {})
   })
 program
   .command('init')

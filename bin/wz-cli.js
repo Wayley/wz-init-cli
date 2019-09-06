@@ -6,7 +6,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-08-28 17:01:29
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-06 10:54:19
+ * @LastEditTime: 2019-09-06 11:23:29
  * @Description:
  */
 'use strict';
@@ -28,13 +28,13 @@ program
 program
   .command('create')
   .arguments('<app-name>')
-  .description('create a new app project')
+  .description('create a new app project') //命令的描述
   .action((appName, options) => {
     createAction(appName).then(done => {})
   })
 program
   .command('init')
-  .description('initialize a new app project') //命令的描述
+  .description('initialize a new app project')
   .option('-a,--all', 'Whether to init all files') //命令的参数
   .action(function (options) {
     initAction().then()
@@ -42,6 +42,7 @@ program
 
 program
   .command('test')
+  .description('some test commands for this CLI')
   .option('-a,--all', 'whether to test all inquirer types')
   .action(options => {
     testAction(options.all).then(data => {
